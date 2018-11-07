@@ -105,18 +105,18 @@ TextureImporter:
       name: Despegue_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 2717
-        y: 134
-        width: 703
-        height: 1277
+        x: 141
+        y: 330
+        width: 1306
+        height: 1037
       alignment: 9
-      pivot: {x: 0.25743362, y: 0.55934894}
+      pivot: {x: 0.56894684, y: 0.47829202}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab74bf6107884344a8f2b72db182f321
+      spriteID: 401d07cfdbb48bc41adbc509b78c1d9b
       vertices: []
       indices: 
       edges: []
@@ -125,18 +125,18 @@ TextureImporter:
       name: Despegue_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 3050
-        y: 1407
-        width: 14
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2717
+        y: 0
+        width: 702
+        height: 1401
+      alignment: 9
+      pivot: {x: 0.2434635, y: 0.57069874}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ab12b446d7b1b74e8ba282499d9de03
+      spriteID: 15106482c47e7c64da5a3ae8c009ff77
       vertices: []
       indices: 
       edges: []
@@ -145,98 +145,18 @@ TextureImporter:
       name: Despegue_SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 4472
-        y: 174
-        width: 741
-        height: 1798
+        x: 4468
+        y: 177
+        width: 738
+        height: 1792
       alignment: 9
-      pivot: {x: 0.73524153, y: 0.42834222}
+      pivot: {x: 0.7379233, y: 0.42462787}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a804421b06340854ca53185e6d15eb0f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Despegue_SpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 321
-        width: 1313
-        height: 1061
-      alignment: 9
-      pivot: {x: 0.56638, y: 0.4857137}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee6f11047c864d949a284ad1ea9aacca
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Despegue_SpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 1105
-        y: 1379
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1b83a07d9ba64248b9e4063886f765d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Despegue_SpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 829
-        y: 319
-        width: 9
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a6acb1a89189644c9eaed6fc4025e94
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Despegue_SpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 1008
-        y: 304
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5aafe5ef005fac4998f4d1fa2b8e5a7
+      spriteID: 7e3dedb11d668cb4b9cde998b43a0f16
       vertices: []
       indices: 
       edges: []
