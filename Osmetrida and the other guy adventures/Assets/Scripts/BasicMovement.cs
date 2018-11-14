@@ -49,7 +49,7 @@ public class BasicMovement : MonoBehaviour {
             animator.SetBool("isFly", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             animator.SetTrigger("jump");
         }
