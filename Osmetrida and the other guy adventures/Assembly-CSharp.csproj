@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\BasicMovement.cs" />
      <Compile Include="Assets\Scripts\Chamber.cs" />
      <Compile Include="Assets\Scripts\ChamberCreator.cs" />
+     <Compile Include="Assets\Scripts\Controlador.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\LevelGenerator.cs" />
@@ -108,22 +109,22 @@
      <None Include="Assets\Anima2D\Examples\Shaders\VertexLitOneDirectional.shader" />
      <None Include="Assets\Anima2D\Readme.txt" />
  <Reference Include="Cinemachine">
- <HintPath>C:/Users/jorge/Desktop/Proyecto/Osmetrida-master/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ <HintPath>C:/Users/juanl/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/jorge/Desktop/Proyecto/Osmetrida-master/Osmetrida and the other guy adventures/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/juanl/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/jorge/Desktop/Proyecto/Osmetrida-master/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/juanl/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/jorge/Desktop/Proyecto/Osmetrida-master/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/juanl/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.cinemachine.editor">
- <HintPath>C:/Users/jorge/Desktop/Proyecto/Osmetrida-master/Osmetrida and the other guy adventures/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ <HintPath>C:/Users/juanl/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/jorge/Desktop/Proyecto/Osmetrida-master/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/juanl/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -324,10 +325,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/jorge/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Users/juanl/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
- <HintPath>C:/Users/jorge/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/juanl/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
