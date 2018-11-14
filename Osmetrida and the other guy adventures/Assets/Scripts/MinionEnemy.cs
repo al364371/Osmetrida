@@ -7,6 +7,7 @@ public class MinionEnemy : MonoBehaviour {
     private Animator animator;
 
     public float hitDistance;
+    public float xForce, yForce;
     public Transform player;
 
     public float wallColission;
@@ -53,6 +54,20 @@ public class MinionEnemy : MonoBehaviour {
         if (hitInfo.collider != null && hitInfo.collider.tag == "Player")
         {
             animator.SetBool("isShoot", true);
+            hitInfo.collider.GetComponent<Health>().HurtPlayer(1);
+            Rigidbody2D rb = hitInfo.collider.GetComponent<Rigidbody2D>();
+
+            Vector2 force;
+            Debug.Log(movingRight);
+            if (movingRight)
+            {
+                force = Vector2.right * xForce;
+            }
+            else
+            {
+                force = Vector2.left * xForce;
+            }
+            rb.velocity = force;
         }
         if (hitInfo.collider == null || (hitInfo.collider != null && hitInfo.collider.tag != "Player"))
         {

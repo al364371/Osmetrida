@@ -39,6 +39,7 @@ public class Projectile : MonoBehaviour {
         if (collider.CompareTag("Player"))
         {
             DestroyProyectile();
+            collider.GetComponent<Health>().HurtPlayer(1);
         }
     }
 
