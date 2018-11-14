@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,20 +33,31 @@ public class BasicMovement : MonoBehaviour {
 
         //Animator Control
 
-        if (moveInput != 0)
-        {
-            animator.SetBool("isWalk", true);
-        }
-
-        else
-        {
-            animator.SetBool("isWalk", false);
-        }       
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+
+        if (isGrounded)
+        {
+            animator.SetBool("isFly", false);
+            isWalking();
+        }
+        else
+        {
+            animator.SetBool("isFly", true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("jump");
+        }
+
+        else
+        {
+            animator.SetBool("isJump", false);
+        }
 
         if (moveInput > 0)
         {
@@ -80,27 +91,24 @@ public class BasicMovement : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+            isWalking();
         }
 
         //Animator Control
 
-        if (isGrounded)
-        {
-            animator.SetBool("isFly", false);
-        }
-        else
-        {
-            animator.SetBool("isFly", true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+
+    }
+    public void isWalking(){
+
+        if (moveInput != 0)
         {
-            animator.SetBool("isJump", true);
+            animator.SetBool("isWalk", true);
         }
 
         else
         {
-            animator.SetBool("isJump", false);
+            animator.SetBool("isWalk", false);
         }
     }
 }
