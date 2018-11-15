@@ -85,9 +85,11 @@
     <Compile Include="Assets\Anima2D\Scripts\SpriteMesh.cs" />
     <Compile Include="Assets\Anima2D\Scripts\SpriteMeshAnimation.cs" />
     <Compile Include="Assets\Anima2D\Scripts\SpriteMeshInstance.cs" />
+    <Compile Include="Assets\Animations\Boss\idleBehavior.cs" />
     <Compile Include="Assets\Animations\Boss\introBehavior.cs" />
-    <Compile Include="Assets\idleBehavior.cs" />
-    <Compile Include="Assets\RangedAttackBehavior.cs" />
+    <Compile Include="Assets\Animations\Boss\MeleAttackBehavior.cs" />
+    <Compile Include="Assets\Animations\Boss\RangedAttackBehavior.cs" />
+    <Compile Include="Assets\Animations\Boss\TimeToAttackBehavior.cs" />
     <Compile Include="Assets\Scripts\AtaqueSteve.cs" />
     <Compile Include="Assets\Scripts\BasicMovement.cs" />
     <Compile Include="Assets\Scripts\BossPixelArt.cs" />

@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   numHearts: 8
-  timeToDeath: 0.25
+  timeToDeath: 0.5
   hearts:
   - {fileID: 217914716}
   - {fileID: 1977805166}
