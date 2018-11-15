@@ -54,7 +54,7 @@ public class MinionEnemy : MonoBehaviour {
         if (hitInfo.collider != null && hitInfo.collider.tag == "Player")
         {
             animator.SetBool("isShoot", true);
-            hitInfo.collider.GetComponent<Health>().HurtPlayer(1);
+            
             Rigidbody2D rb = hitInfo.collider.GetComponent<Rigidbody2D>();
 
             Vector2 force;
@@ -73,6 +73,16 @@ public class MinionEnemy : MonoBehaviour {
         {
             animator.SetBool("isShoot", false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision != null && collision.tag == "Player")
+        {
+            collision.GetComponent<Health>().HurtPlayer(1);
+        }
+
     }
 
 }
