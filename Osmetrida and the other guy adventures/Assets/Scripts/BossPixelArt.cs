@@ -5,7 +5,8 @@ using UnityEngine;
 public class BossPixelArt : MonoBehaviour {
 
     public Transform BallAttack;
-    public float offset = 2f;
+    public float offsetx = 2f;
+    public float offsety = 0.342f;
     private Vector2 posSpawn;
 
 	void Start () {
@@ -27,10 +28,10 @@ public class BossPixelArt : MonoBehaviour {
 
     void SpawnProjectile()
     {
-        posSpawn = new Vector2(gameObject.transform.position.x + offset, gameObject.transform.position.y);
+        posSpawn = new Vector2(gameObject.transform.position.x + offsetx, gameObject.transform.position.y + offsety);
         Instantiate(BallAttack, posSpawn, Quaternion.identity);
-        posSpawn = new Vector2(gameObject.transform.position.x - offset, gameObject.transform.position.y);
+        posSpawn = new Vector2(gameObject.transform.position.x - offsetx, gameObject.transform.position.y + offsety);
         Instantiate(BallAttack, posSpawn, Quaternion.identity);
-        offset += 2;
+        offsetx += 2;
     }
 }

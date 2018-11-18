@@ -15,7 +15,7 @@ public class RangedAttackBehavior : StateMachineBehaviour {
         timer = Random.Range(minTime, maxTime);
         rand = Random.Range(0, 2);
 
-        animator.GetComponent<BossPixelArt>().offset = 2f; ;
+        animator.GetComponent<BossPixelArt>().offsetx = 2f; ;
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
