@@ -17,6 +17,14 @@ public class BossPixelArt : MonoBehaviour {
 		
 	}
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            collider.GetComponent<Health>().HurtPlayer(1);
+        }
+    }
+
     void SpawnProjectile()
     {
         posSpawn = new Vector2(gameObject.transform.position.x + offset, gameObject.transform.position.y);
