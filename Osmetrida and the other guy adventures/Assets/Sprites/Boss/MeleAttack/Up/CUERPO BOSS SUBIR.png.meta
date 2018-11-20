@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 4a4d9b05d9f33d540926eb9327fed373
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: CUERPO BOSS SUBIR_0
+    21300002: CUERPO BOSS SUBIR_1
+    21300004: CUERPO BOSS SUBIR_2
+    21300006: CUERPO BOSS SUBIR_3
+    21300008: CUERPO BOSS SUBIR_4
+    21300010: CUERPO BOSS SUBIR_5
+    21300012: CUERPO BOSS SUBIR_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -31,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +47,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +76,171 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CUERPO BOSS SUBIR_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb5477add5338141ba3ccf08cad2efe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS SUBIR_1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 251
+        height: 256
+      alignment: 9
+      pivot: {x: 0.4887468, y: 0.4984238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608ea4e7705877a489c77a3c94ef1e1d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS SUBIR_2
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.47478104, y: 0.49684763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15964a5085ba4846bf496c7edb4ed90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS SUBIR_3
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 0
+        width: 247
+        height: 256
+      alignment: 9
+      pivot: {x: 0.482048, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2cf5d570c93464080e4c8de1f844c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS SUBIR_4
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 0
+        width: 251
+        height: 256
+      alignment: 9
+      pivot: {x: 0.4894003, y: 0.49826792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f9a9dc3932b9f48854c67b16a3609e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS SUBIR_5
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 0
+        width: 250
+        height: 256
+      alignment: 9
+      pivot: {x: 0.487584, y: 0.50173205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1edab4bcbd631f74fa862f757c65620c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS SUBIR_6
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 0
+        width: 249
+        height: 256
+      alignment: 9
+      pivot: {x: 0.48397252, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa11f80d1f60bb04a8e3cd7e1f9a5965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

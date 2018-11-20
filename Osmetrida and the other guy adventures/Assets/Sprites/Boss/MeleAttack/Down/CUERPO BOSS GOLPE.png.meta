@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: a8503519edfde91408cc65211da7c603
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: CUERPO BOSS GOLPE_0
+    21300002: CUERPO BOSS GOLPE_1
+    21300004: CUERPO BOSS GOLPE_2
+    21300006: CUERPO BOSS GOLPE_3
+    21300008: CUERPO BOSS GOLPE_4
+    21300010: CUERPO BOSS GOLPE_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -31,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +75,131 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CUERPO BOSS GOLPE_0
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 257
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d87e75728e88d7408f5c23cd0096e56
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS GOLPE_1
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 0
+        width: 230
+        height: 256
+      alignment: 9
+      pivot: {x: 0.44201553, y: 0.5026715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbff33dc721abe498f16af3bf8d9d92
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS GOLPE_2
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.45727348, y: 0.49862748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7bbb4d7e9932448a820ca314abe838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS GOLPE_3
+      rect:
+        serializedVersion: 2
+        x: 2577
+        y: 0
+        width: 239
+        height: 256
+      alignment: 9
+      pivot: {x: 0.46422982, y: 0.5026164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6268b966151c3a47835f5a74fcacf43
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUERPO BOSS GOLPE_4
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 0
+        width: 248
+        height: 256
+      alignment: 9
+      pivot: {x: 0.48210293, y: 0.5026623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d38c9a5bd27e14f890c917f3d9e8a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
