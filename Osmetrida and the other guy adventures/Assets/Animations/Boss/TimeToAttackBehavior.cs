@@ -12,6 +12,7 @@ public class TimeToAttackBehavior : StateMachineBehaviour {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 
         timer = Random.Range(minTime, maxTime);
+        //animator.SetBool("StayMele", true);
 
 	}
     
@@ -20,7 +21,8 @@ public class TimeToAttackBehavior : StateMachineBehaviour {
 	
         if (timer <= 0)
         {
-            animator.SetBool("WaitDown", false);
+            animator.SetBool("StayMele", false);
+            animator.SetBool("Idle", true);
         }
         else
         {
@@ -31,6 +33,6 @@ public class TimeToAttackBehavior : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	
+        animator.SetBool("MeleAttack", false);
 	}
 }

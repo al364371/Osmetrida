@@ -8,22 +8,13 @@ public class MeleAttackBehavior : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-
-        rand = Random.Range(0, 2);
         
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 
-        if (rand == 0){
-            animator.SetTrigger("Idle");
-        }
-        else
-        {
-            animator.SetTrigger("RangedAttack");
-        }
-        animator.SetBool("WaitDown", true);
+        animator.SetBool("StayMele", true);
 
 	}
 

@@ -10,16 +10,11 @@ public class idleBehavior : StateMachineBehaviour {
 
     private int rand;
 
-    private Transform playerPos;
-    public float speed;
-
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
         timer = Random.Range(minTime, maxTime);
-        rand = Random.Range(0, 2);
+        //rand = Random.Range(0, 2);
 	    
 	}
 
@@ -28,27 +23,17 @@ public class idleBehavior : StateMachineBehaviour {
 
         if(timer <= 0)
         {
-            if (rand == 0)
-            {
-                animator.SetTrigger("RangedAttack");
-            }
-            else
-            {
-                animator.SetTrigger("MeleAttack");
-            }
+            animator.SetBool("MeleAttack", true);
         }
         else
         {
             timer -= Time.deltaTime;
         }
-
-        Vector2 target = new Vector2(playerPos.position.x, animator.transform.position.y);
-        animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed * Time.deltaTime);
 	
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	
+        animator.SetBool("Idle", false);
 	}
 }

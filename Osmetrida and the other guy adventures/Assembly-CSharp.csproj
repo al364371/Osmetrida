@@ -92,6 +92,8 @@
     <Compile Include="Assets\Animations\Boss\TimeToAttackBehavior.cs" />
     <Compile Include="Assets\Scripts\AtaqueSteve.cs" />
     <Compile Include="Assets\Scripts\BasicMovement.cs" />
+    <Compile Include="Assets\Scripts\BossHands.cs" />
+    <Compile Include="Assets\Scripts\BossHealth.cs" />
     <Compile Include="Assets\Scripts\BossPixelArt.cs" />
     <Compile Include="Assets\Scripts\CanvasMove.cs" />
     <Compile Include="Assets\Scripts\Chamber.cs" />
