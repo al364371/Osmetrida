@@ -264,3 +264,25 @@ public static class ListConnectionCreator
 
 
 }
+
+public static class ChamberSectionChecking
+{
+    public static bool IsIntermediate(ChamberConnectionType chamberType)
+    {
+        if(chamberType == ChamberConnectionType.LeftRight || chamberType == ChamberConnectionType.TopBottom)
+        { 
+            return true;
+        }
+        return false;
+    }
+
+    public static bool IsExtreme(ChamberConnectionType chamberType)
+    {
+        if(   chamberType == ChamberConnectionType.Left || chamberType == ChamberConnectionType.Top 
+           || chamberType == ChamberConnectionType.Right || chamberType == ChamberConnectionType.Bottom)
+        { 
+            return true;
+        }
+        return false;
+    }
+}
