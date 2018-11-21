@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/LevelGeneratorScene.unity
+- path: Assets/Scenes/chamberGenerator.unity
   isLoaded: 1
   isActive: 1
