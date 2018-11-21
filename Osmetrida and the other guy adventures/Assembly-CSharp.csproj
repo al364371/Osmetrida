@@ -120,6 +120,9 @@
      <None Include="Assets\Anima2D\Licenses.txt" />
      <None Include="Assets\Anima2D\Examples\Shaders\VertexLitOneDirectional.shader" />
      <None Include="Assets\Anima2D\Readme.txt" />
+ <Reference Include="Cinemachine">
+ <HintPath>C:/Users/Jstgo/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/Jstgo/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
@@ -129,14 +132,11 @@
  <Reference Include="Unity.PackageManagerUI.Editor">
  <HintPath>C:/Users/Jstgo/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Jstgo/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>C:/Users/Jstgo/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
  <Reference Include="com.unity.cinemachine.editor">
  <HintPath>C:/Users/Jstgo/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>C:/Users/Jstgo/Documents/GitHub/Osmetrida/Osmetrida and the other guy adventures/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

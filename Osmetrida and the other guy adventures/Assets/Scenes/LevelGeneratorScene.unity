@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &18104605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149731961943448, guid: 97bbd2e0841b7164c805aa54b9e10c54,
+    type: 2}
+  m_PrefabInternal: {fileID: 233705194}
 --- !u!1001 &233705194
 Prefab:
   m_ObjectHideFlags: 0
@@ -625,6 +630,7 @@ MonoBehaviour:
   chamberSizeY: 18
   vortexPrefab: {fileID: 1622331042499762, guid: 86939d255b1ce074fb523393c88a9e23,
     type: 2}
+  player: {fileID: 18104605}
 --- !u!19719996 &1688509520
 TilemapCollider2D:
   m_ObjectHideFlags: 0
