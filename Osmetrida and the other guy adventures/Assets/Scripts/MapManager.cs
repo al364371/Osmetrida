@@ -42,50 +42,45 @@ public class MapManager : MonoBehaviour {
 	}
 	public void CreateSection(int section)
 	{
-		StartCoroutine(SectionCreator(section));
-	}
-	public IEnumerator SectionCreator(int section)
-	{
-		bool[] finished = new bool[1];
-		StartCoroutine(ClearMap(finished));
-		yield return new WaitUntil(() => finished[0]);
+		ClearMap();
 		foreach(Transform child in gameObject.transform)
 		{
 			Destroy(child.gameObject);
 		}
+		Vector2 mins = new Vector2(mapMatrix.GetLength(0), mapMatrix.GetLength(1));
+		Vector2 minIndex = Vector2.zero;
+		Vector2 maxIndex = Vector2.zero;
+		Vector2 maxs = new Vector2(-mapMatrix.GetLength(0), -mapMatrix.GetLength(1));
+		foreach(Vector2 chamber in sections[section].chambers)
+		{
+			if(chamber.x < mins.x)
+			{
+				mins.x = chamber.x;
+				minIndex.x = sections[section].chambers.IndexOf(chamber);
+			}
+			if(chamber.x > maxs.x)
+			{
+				maxs.x = chamber.x;
+				maxIndex.x = sections[section].chambers.IndexOf(chamber);
+			}
+			if(chamber.y < mins.y)
+			{
+				mins.y = chamber.y;
+				minIndex.y = sections[section].chambers.IndexOf(chamber);
+			}
+			if(chamber.y > maxs.y)
+			{
+				maxs.y = chamber.y;
+				maxIndex.y = sections[section].chambers.IndexOf(chamber);
+			}
+		}
+		PrepareChambers(maxIndex, minIndex, sections[section]);
 		foreach(Vector2 chamber in sections[section].chambers )
 		{
 			SpawnChamber(chamber, ref chamberMatrix );
 		}
 		if(sections[section].chambers.Count>1)
 		{//Esta seccion tiene más de una cámara, esto quiere decir que es una seccion de leftright o de topBottom\\
-			Vector2 mins = new Vector2(mapMatrix.GetLength(0), mapMatrix.GetLength(1));
-			Vector2 minIndex = Vector2.zero;
-			Vector2 maxIndex = Vector2.zero;
-			Vector2 maxs = new Vector2(-mapMatrix.GetLength(0), -mapMatrix.GetLength(1));
-			foreach(Vector2 chamber in sections[section].chambers)
-			{
-				if(chamber.x < mins.x)
-				{
-					mins.x = chamber.x;
-					minIndex.x = sections[section].chambers.IndexOf(chamber);
-				}
-				if(chamber.x > maxs.x)
-				{
-					maxs.x = chamber.x;
-					maxIndex.x = sections[section].chambers.IndexOf(chamber);
-				}
-				if(chamber.y < mins.y)
-				{
-					mins.y = chamber.y;
-					minIndex.y = sections[section].chambers.IndexOf(chamber);
-				}
-				if(chamber.y > maxs.y)
-				{
-					maxs.y = chamber.y;
-					maxIndex.y = sections[section].chambers.IndexOf(chamber);
-				}
-			}
 			if(sections[section].connections[(int)ChamberConnectionType.Top -1] != -1)
 			{//Esta seccion conecta con otra en top
 				Vector2 chamberPosition = sections[section].chambers[(int) maxIndex.y];
@@ -170,6 +165,8 @@ public class MapManager : MonoBehaviour {
 		Chamber toBeConnected = theChamberMatrix[(int) toSpawn.x, (int) toSpawn.y];
 		Debug.Log("Got chamber for paint, origin is: " + toBeConnected.Origin);
 		Debug.Log("The chamber is " + toSpawn);
+
+
 		for(int y=0; y<chamberSizeY; y++)
         {
             for(int x= 0; x<chamberSizeX; x++)
@@ -188,26 +185,27 @@ public class MapManager : MonoBehaviour {
         }
 	}
 
-	public IEnumerator ClearMap(bool[] state)
+	public void PrepareChambers(Vector2 maxes, Vector2 mins, Section section)
 	{
-		int count = 0;
-		tileMatrix = GetComponent<Tilemap>();
-		Vector2 originofCave = new Vector2(-mapMatrix.GetLength(0)/2, -mapMatrix.GetLength(1)/2);
-		for(int i= (int) originofCave.x * chamberSizeX; i< (mapMatrix.GetLength(0)/2) * chamberSizeX; i++ )
+		Debug.Log("Maxes " + maxes);
+		Debug.Log("Mins " + mins);
+		Vector2 minXChamber = section.chambers[(int) mins.x];
+		Vector2 maxXChamber = section.chambers[(int) maxes.x];
+		Vector2 minYChamber = section.chambers[(int) mins.y];
+		Vector2 maxYChamber = section.chambers[(int) maxes.y];
+		for(int j= (int) (chamberMatrix[(int) minYChamber.x, (int) minYChamber.y].Origin.y - chamberSizeY); j< chamberMatrix[(int) maxYChamber.x, (int) maxYChamber.y].Origin.y + (2 * chamberSizeY); j++ )
 		{
-			for(int j= (int) originofCave.y * chamberSizeY; j< (mapMatrix.GetLength(1)/2) * chamberSizeY; j++)
+			for (int i= (int) (chamberMatrix[(int) minXChamber.x, (int) minXChamber.y].Origin.x - chamberSizeX); i < chamberMatrix[(int) maxXChamber.x, (int) maxXChamber.y].Origin.x + (2 *chamberSizeX) ; i++)
 			{
-				Debug.Log("aNATA NO PATATA");
 				tileMatrix.SetTile(new Vector3Int(i,j,0), tiles[0]);
-				count++;
-				if(count > 200)
-				{
-					yield return new WaitForEndOfFrame();
-				}
 			}
 		}
-		state[0] = true;
-		//tileMatrix.ClearAllTiles();
+	}
+
+	public void ClearMap()
+	{
+		tileMatrix = GetComponent<Tilemap>();
+		tileMatrix.ClearAllTiles();
 	}
 }
 

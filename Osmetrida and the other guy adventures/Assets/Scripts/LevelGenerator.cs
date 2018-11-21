@@ -130,7 +130,6 @@ public class LevelGenerator : MonoBehaviour
     {
         Vector2 positionToTest = chambersIncomplete.Dequeue();
         Section currentSection = sections[sectionMatrix[(int) positionToTest.x, (int) positionToTest.y]];
-        Debug.Log("Section of the position to test is : " + sectionMatrix[(int) positionToTest.x, (int) positionToTest.y]);
         while(IsComplete(positionToTest, ref mapMatrix))
         {
             positionToTest = chambersIncomplete.Dequeue();
@@ -142,7 +141,6 @@ public class LevelGenerator : MonoBehaviour
         //Test if section is complete\\
         if(currentSection.isComplete && (ChamberSectionChecking.IsIntermediate(chamberType) || ChamberSectionChecking.IsExtreme(chamberType) ))
         {//Section is complete, create new section. This chamber must be connected to the old one\\
-            Debug.Log("Found that section n " + sections.IndexOf(currentSection) + " was complete, creating new section");
             //Determine the position of the old chamber\\
             if(positionToCreate.x > positionToTest.x)
             { //The new chamber is at the right of the old one\\
@@ -174,7 +172,6 @@ public class LevelGenerator : MonoBehaviour
             }
             sections.Add(currentSection);
             currentSection = sections[sections.Count -1];
-            Debug.Log("Section added on " + (sections.Count -1));
         }
         if(ChamberSectionChecking.IsIntermediate(chamberType))
         { //Esta es una camara intermedia de la seccion\\
@@ -186,14 +183,12 @@ public class LevelGenerator : MonoBehaviour
             if(currentSection.chambers.Count > 0)
             {//Esta camara cierra la seccion\\
                 currentSection.isComplete = true;
-                Debug.Log("Found an ending chamber, finishing section");
             }
             sectionMatrix[(int) positionToCreate.x, (int) positionToCreate.y] = sections.IndexOf(currentSection);
             currentSection.chambers.Add(positionToCreate);
         }
         else
         { 
-            Debug.Log("Found a corner chamber, finishing old section");
           currentSection.isComplete = true; //The old section is complete
           //Determine the position of the old chamber\\
             if(positionToCreate.x > positionToTest.x)
@@ -227,8 +222,7 @@ public class LevelGenerator : MonoBehaviour
             currentSection.chambers.Add(positionToCreate);
             currentSection.isComplete = true; //The triple camera section is also complete
             sectionMatrix[(int) positionToCreate.x, (int) positionToCreate.y] = sections.Count;
-            sections.Add(currentSection);
-            Debug.Log("Created new section on " + (sections.Count -1));  
+            sections.Add(currentSection); 
         }
         mapMatrix[(int)positionToCreate.x,(int)positionToCreate.y] = (int) chamberType; 
         if(!IsComplete(positionToCreate, ref mapMatrix))
@@ -248,7 +242,6 @@ public class LevelGenerator : MonoBehaviour
             
             Vector2 positionToTest = chambersIncomplete.Dequeue();
             Section currentSection = sections[sectionMatrix[(int) positionToTest.x, (int) positionToTest.y]];
-            Debug.Log("Section of the position to test is : " + sectionMatrix[(int) positionToTest.x, (int) positionToTest.y]);
             while(IsComplete(positionToTest, ref mapMatrix))
             {
                 positionToTest = chambersIncomplete.Dequeue();
@@ -260,7 +253,6 @@ public class LevelGenerator : MonoBehaviour
         //Test if section is complete\\
         if(currentSection.isComplete && (ChamberSectionChecking.IsIntermediate(chamberType) || ChamberSectionChecking.IsExtreme(chamberType) ))
         {//Section is complete, create new section. This chamber must be connected to the old one\\
-            Debug.Log("Found that section n " + sections.IndexOf(currentSection) + " was complete, creating new section");
             //Determine the position of the old chamber\\
             if(positionToCreate.x > positionToTest.x)
             { //The new chamber is at the right of the old one\\
@@ -292,7 +284,6 @@ public class LevelGenerator : MonoBehaviour
             }
             sections.Add(currentSection);
             currentSection = sections[sections.Count -1];
-            Debug.Log("Section added on " + (sections.Count -1));
         }
         if(ChamberSectionChecking.IsIntermediate(chamberType))
         { //Esta es una camara intermedia de la seccion\\
@@ -304,14 +295,12 @@ public class LevelGenerator : MonoBehaviour
             if(currentSection.chambers.Count > 0)
             {//Esta camara cierra la seccion\\
                 currentSection.isComplete = true;
-                Debug.Log("Found an ending chamber, finishing section");
             }
             sectionMatrix[(int) positionToCreate.x, (int) positionToCreate.y] = sections.IndexOf(currentSection);
             currentSection.chambers.Add(positionToCreate);
         }
         else
         { 
-            Debug.Log("Found a corner chamber, finishing old section");
           currentSection.isComplete = true; //The old section is complete
           //Determine the position of the old chamber\\
             if(positionToCreate.x > positionToTest.x)
@@ -345,8 +334,7 @@ public class LevelGenerator : MonoBehaviour
             currentSection.chambers.Add(positionToCreate);
             currentSection.isComplete = true; //The triple camera section is also complete
             sectionMatrix[(int) positionToCreate.x, (int) positionToCreate.y] = sections.Count;
-            sections.Add(currentSection);
-            Debug.Log("Created new section on " + (sections.Count -1));  
+            sections.Add(currentSection);  
         }
             mapMatrix[(int)positionToCreate.x,(int)positionToCreate.y] = (int) chamberType;
             if(!IsComplete(positionToTest, ref mapMatrix))
@@ -749,7 +737,6 @@ public class LevelGenerator : MonoBehaviour
 
     private void ConnectChambers(Vector2 Origin, ref Chamber[,] chambers)
     {
-        Debug.LogWarning(Origin);
         Chamber chamberToConnect = chambers[(int) Origin.x, (int) Origin.y];
         Vector2 positionToConnect = Origin;
         Queue<Chamber> chambersToConnect = new Queue<Chamber>();
@@ -763,15 +750,11 @@ public class LevelGenerator : MonoBehaviour
             chamberToConnect = chambersToConnect.Dequeue();
             positionToConnect = positions.Dequeue();
             positionsUsed.Add(positionToConnect);
-            Debug.Log("Chamber to inspect: " + positionToConnect);
-            Debug.Log("The chamber is of type " +chamberToConnect.connectionType );
             if(chamberToConnect.allowedConnections[(int) ChamberConnectionType.Top -1])
             {//Esta casilla tiene una casilla en top\\
                 Vector2 positionToAdd = new Vector2(positionToConnect.x, positionToConnect.y +1);
-                Debug.Log("Top allowed");
                 if(!positionsUsed.Contains(positionToAdd))
                 {
-                Debug.Log(chambers[(int) positionToAdd.x, (int) positionToAdd.y]);
                 int chamberToConnectPoint = chamberToConnect.connectionPoints[(int) ChamberConnectionType.Top -1];
                 int newchamberConnectPoint = chambers[(int) positionToConnect.x, (int) positionToConnect.y +1].connectionPoints[(int) ChamberConnectionType.Bottom -1];
                 chambers[(int) positionToConnect.x, (int) positionToConnect.y +1].Origin = new Vector2(chamberToConnect.Origin.x + (chamberToConnectPoint - newchamberConnectPoint) , chamberToConnect.Origin.y + chamberSizeY );
@@ -780,10 +763,8 @@ public class LevelGenerator : MonoBehaviour
             }
             if(chamberToConnect.allowedConnections[(int) ChamberConnectionType.Bottom -1])
             {//Esta casilla tiene una casilla en bot\\
-                Debug.Log("Bot allowed");
                 Vector2 positionToAdd = new Vector2(positionToConnect.x, positionToConnect.y -1);
                 if(!positionsUsed.Contains(positionToAdd)){
-                Debug.Log(chambers[(int) positionToAdd.x, (int) positionToAdd.y]);
                 int chamberToConnectPoint = chamberToConnect.connectionPoints[(int) ChamberConnectionType.Bottom -1];
                 int newchamberConnectPoint = chambers[(int) positionToConnect.x, (int) positionToConnect.y -1].connectionPoints[(int) ChamberConnectionType.Top -1];
                 chambers[(int) positionToConnect.x, (int) positionToConnect.y -1].Origin = new Vector2(chamberToConnect.Origin.x + (chamberToConnectPoint - newchamberConnectPoint) , chamberToConnect.Origin.y - chamberSizeY );
@@ -792,10 +773,8 @@ public class LevelGenerator : MonoBehaviour
             }
             if(chamberToConnect.allowedConnections[(int) ChamberConnectionType.Left -1])
             {//Esta casilla tiene una casilla en left\\
-                Debug.Log("Left allowed");
                 Vector2 positionToAdd = new Vector2(positionToConnect.x -1, positionToConnect.y);
                 if(!positionsUsed.Contains(positionToAdd)){
-                Debug.Log(chambers[(int) positionToAdd.x, (int) positionToAdd.y]);
                 int chamberToConnectPoint = chamberToConnect.connectionPoints[(int) ChamberConnectionType.Left -1];
                 int newchamberConnectPoint = chambers[(int) positionToConnect.x -1, (int) positionToConnect.y].connectionPoints[(int) ChamberConnectionType.Right -1];
                 chambers[(int) positionToConnect.x -1, (int) positionToConnect.y].Origin = new Vector2(chamberToConnect.Origin.x - chamberSizeX , chamberToConnect.Origin.y + (chamberToConnectPoint - newchamberConnectPoint) );
@@ -805,10 +784,8 @@ public class LevelGenerator : MonoBehaviour
             }
             if(chamberToConnect.allowedConnections[(int) ChamberConnectionType.Right -1])
             {//Esta casilla tiene una casilla en right\\
-                Debug.Log("Right allowed");
                 Vector2 positionToAdd = new Vector2(positionToConnect.x +1, positionToConnect.y);
                 if(!positionsUsed.Contains(positionToAdd)){
-                Debug.Log(chambers[(int) positionToAdd.x, (int) positionToAdd.y]);
                 int chamberToConnectPoint = chamberToConnect.connectionPoints[(int) ChamberConnectionType.Right -1];
                 int newchamberConnectPoint = chambers[(int) positionToConnect.x +1, (int) positionToConnect.y].connectionPoints[(int) ChamberConnectionType.Left -1];
                 chambers[(int) positionToConnect.x +1, (int) positionToConnect.y].Origin = new Vector2(chamberToConnect.Origin.x + chamberSizeX , chamberToConnect.Origin.y + (chamberToConnectPoint - newchamberConnectPoint) );
