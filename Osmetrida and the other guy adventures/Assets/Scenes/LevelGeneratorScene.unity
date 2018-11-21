@@ -201,6 +201,11 @@ Prefab:
       propertyPath: hearts.Array.data[7]
       value: 
       objectReference: {fileID: 2066697093}
+    - target: {fileID: 114289440523046100, guid: 97bbd2e0841b7164c805aa54b9e10c54,
+        type: 2}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97bbd2e0841b7164c805aa54b9e10c54, type: 2}
   m_IsPrefabAsset: 0
@@ -631,6 +636,7 @@ MonoBehaviour:
   vortexPrefab: {fileID: 1622331042499762, guid: 86939d255b1ce074fb523393c88a9e23,
     type: 2}
   player: {fileID: 18104605}
+  enemySpawner: {fileID: 0}
 --- !u!19719996 &1688509520
 TilemapCollider2D:
   m_ObjectHideFlags: 0
