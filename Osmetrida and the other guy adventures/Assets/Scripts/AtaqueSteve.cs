@@ -36,7 +36,6 @@ public class AtaqueSteve : MonoBehaviour {
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
                         enemiesToDamage[i].GetComponent<Enemy>().vida -= daño;
-                        enemiesToDamage[i].GetComponent<BossHealth>().vida -= daño;
                     }
                     attackFinished = false;
                     tiempoAtaque = startTiempoAtaque;

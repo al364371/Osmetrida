@@ -14,7 +14,7 @@ public class idleBehavior : StateMachineBehaviour {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 
         timer = Random.Range(minTime, maxTime);
-        //rand = Random.Range(0, 2);
+        rand = Random.Range(0, 2);
 	    
 	}
 
@@ -23,7 +23,14 @@ public class idleBehavior : StateMachineBehaviour {
 
         if(timer <= 0)
         {
-            animator.SetBool("MeleAttack", true);
+            if (rand == 0)
+            {
+                animator.SetBool("MeleAttack", true);
+            }
+            else
+            {
+                animator.SetBool("RangedAttack", true);
+            }
         }
         else
         {

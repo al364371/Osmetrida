@@ -11,13 +11,15 @@ public class FireBallBoss : MonoBehaviour {
 
     public float animationEnd;
 
+    private Animator animator;
+
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector2(transform.position.x, player.position.y);
 
-        
+        animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -25,11 +27,13 @@ public class FireBallBoss : MonoBehaviour {
 
         if (animationEnd <= 0)
         {
+            animator.SetBool("Move", true);
             transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
             if (target.y == transform.position.y)
             {
-                DestroyProyectile();
+                animator.SetBool("Move", false);
+                animator.SetTrigger("Explode");
             }
         }
         else
@@ -43,7 +47,8 @@ public class FireBallBoss : MonoBehaviour {
     {
         if (collider.CompareTag("Player"))
         {
-            DestroyProyectile();
+            animator.SetBool("Move", false);
+            animator.SetTrigger("Explode");
             collider.GetComponent<Health>().HurtPlayer(1);
         }
     }
