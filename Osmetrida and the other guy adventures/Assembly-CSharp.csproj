@@ -82,6 +82,7 @@
      <Compile Include="Assets\Animations\Boss\MeleAttackBehavior.cs" />
      <Compile Include="Assets\Animations\Boss\RangedAttackBehavior.cs" />
      <Compile Include="Assets\Animations\Boss\TimeToAttackBehavior.cs" />
+     <Compile Include="Assets\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\AtaqueSteve.cs" />
      <Compile Include="Assets\Scripts\BasicMovement.cs" />
      <Compile Include="Assets\Scripts\BossHands.cs" />
