@@ -23,21 +23,24 @@ public class BossHands : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (animator.GetBool("Idle") == true)
+        target = new Vector2(player.position.x, transform.position.y);
+
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        /*if (animator.GetBool("Idle"))
         { 
             target = new Vector2(player.position.x, transform.position.y);
 
             transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        }
+        }*/
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collider)
     {
         if (animator.GetBool("CanDamage"))
         {
-            if (collider.CompareTag("Player"))
+            if (collider.collider.CompareTag("Player"))
             {
-                collider.GetComponent<Health>().HurtPlayer(1);
+                collider.collider.GetComponent<Health>().HurtPlayer(1);
             }
         }
     }

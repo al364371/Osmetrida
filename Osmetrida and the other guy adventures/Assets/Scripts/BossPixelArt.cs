@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossPixelArt : MonoBehaviour {
 
     public Transform BallAttack;
-    public float offsetx = 2f;
-    public float offsety = 0.342f;
+    public float offsetx = 3f;
+    public float offsety = 200f;
 
     private Vector2 posSpawn;
 
@@ -16,6 +17,8 @@ public class BossPixelArt : MonoBehaviour {
     private Vector2 target;
     public float speed;
 
+    public Slider healthBar;
+
 	void Start () {
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -24,6 +27,8 @@ public class BossPixelArt : MonoBehaviour {
 	
 
 	void Update () {
+
+        healthBar.value = gameObject.GetComponent<Enemy>().vida;
 
 	}
 
