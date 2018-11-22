@@ -17,12 +17,14 @@ public class EnemySpawner : MonoBehaviour {
 
         if(rand == 0)
         {
-            Instantiate(enemy1, transform.position,Quaternion.identity);
+            GameObject toInstantiate = Instantiate(enemy1, transform.position,Quaternion.identity);
+            toInstantiate.transform.parent = gameObject.transform;
         }
 
         else
         {
-            Instantiate(enemy2, transform.position, Quaternion.identity);
+            GameObject toInstantiat = Instantiate(enemy2, transform.position, Quaternion.identity);
+            toInstantiat.transform.parent = gameObject.transform;
         }
 		
 	}

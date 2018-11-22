@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSection: 0
-  timeforActive: 0.5
+  timeforActive: 2
 --- !u!212 &212446058281035686
 SpriteRenderer:
   m_ObjectHideFlags: 1

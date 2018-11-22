@@ -132,9 +132,9 @@ public class MapManager : MonoBehaviour {
 			GameObject toInstantiate = Instantiate(vortexPrefab, positionToInstantiate, Quaternion.identity);
 			toInstantiate.transform.parent = gameObject.transform;
 			toInstantiate.GetComponent<LevelConnector>().newSection = sections[section].connections[(int)ChamberConnectionType.Right -1];
-			if(sections[section].connections[(int) ChamberConnectionType.Left -1] == currentSection)
+			if(sections[section].connections[(int) ChamberConnectionType.Right -1] == currentSection)
 			{//Esta es la conexion de la nueva seccion con la anterior
-				Vector2 position = new Vector2(theChamber.Origin.x + chamberSizeX - 6, theChamber.Origin.y + (theChamber.connectionPoints[(int)ChamberConnectionType.Right -1]) +2);
+				Vector2 position = new Vector2(theChamber.Origin.x + chamberSizeX - 2, theChamber.Origin.y + (theChamber.connectionPoints[(int)ChamberConnectionType.Right -1]) +2);
 				player.transform.position = new Vector3(position.x, position.y, 0);
 			}
 		}
@@ -164,6 +164,7 @@ public class MapManager : MonoBehaviour {
                     tileMatrix.SetTile(toPaint,null);
 					if(toBeConnected.mapMatrix[(y * chamberSizeX) + x] == 5)
 					{
+						toPaint.y += 1;
 						GameObject enemyToInstantiate = Instantiate(enemySpawner, toPaint, Quaternion.identity);
 						enemyToInstantiate.transform.parent = gameObject.transform;
 					}

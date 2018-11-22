@@ -636,7 +636,8 @@ MonoBehaviour:
   vortexPrefab: {fileID: 1622331042499762, guid: 86939d255b1ce074fb523393c88a9e23,
     type: 2}
   player: {fileID: 18104605}
-  enemySpawner: {fileID: 0}
+  enemySpawner: {fileID: 1553132177275870, guid: 859278d873fe8b744b441fcc1d834e69,
+    type: 2}
 --- !u!19719996 &1688509520
 TilemapCollider2D:
   m_ObjectHideFlags: 0

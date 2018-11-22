@@ -24,7 +24,6 @@ public class BossHands : MonoBehaviour {
     void Update()
     {
         target = new Vector2(player.position.x, transform.position.y);
-
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         /*if (animator.GetBool("Idle"))
         { 
@@ -40,6 +39,7 @@ public class BossHands : MonoBehaviour {
         {
             if (collider.collider.CompareTag("Player"))
             {
+                Debug.Log("Die already");
                 collider.collider.GetComponent<Health>().HurtPlayer(1);
             }
         }
