@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour {
     private Vector2 target;
     private Vector2 posFin;
 
+    public GameObject explosion;
+
 	// Use this for initialization
 	void Start () {
 
@@ -46,5 +48,6 @@ public class Projectile : MonoBehaviour {
     void DestroyProyectile()
     {
         Destroy(gameObject);
+        Instantiate(explosion, transform.position, Quaternion.identity);
     }
 }
