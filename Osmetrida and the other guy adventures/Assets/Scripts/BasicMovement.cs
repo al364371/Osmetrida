@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,6 +39,12 @@ public class BasicMovement : MonoBehaviour {
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+
+	if (Input.GetKeyDown(KeyCode.Return)){
+
+		SceneManager.LoadScene("BossFight1");	
+
+	}
 
         if (isGrounded)
         {
