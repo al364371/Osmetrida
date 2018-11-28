@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ public class Health : MonoBehaviour {
         if(health <= 0)
         {
             Muerte();
+            GoToGameOver();
         }
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -65,5 +67,9 @@ public class Health : MonoBehaviour {
     void muerte()
     {
         SonidoScript.ejecutarSonido("muerteSteve");
+    }
+
+    void GoToGameOver() {
+        SceneManager.LoadScene("Game Over"); 
     }
 }
