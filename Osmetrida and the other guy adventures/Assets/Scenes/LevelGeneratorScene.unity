@@ -576,8 +576,8 @@ MonoBehaviour:
   probabilities: 1400000014000000140000001400000058020000580200001e0000001e0000001e0000001e000000140000001400000014000000140000000a000000
   mapSizeX: 60
   mapSizeY: 30
-  chamberSizeX: 32
-  chamberSizeY: 18
+  chamberSizeX: 64
+  chamberSizeY: 36
   MapLength: 72
   seed: -1
 --- !u!483693784 &1688509517
@@ -673,8 +673,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39f0297becd7e7342a022bb7e651c5ee, type: 2}
   originX: 0
   originY: 0
-  chamberSizeX: 32
-  chamberSizeY: 18
+  chamberSizeX: 64
+  chamberSizeY: 36
   vortexPrefab: {fileID: 1622331042499762, guid: 86939d255b1ce074fb523393c88a9e23,
     type: 2}
   player: {fileID: 18104605}
