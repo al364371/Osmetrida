@@ -28,15 +28,16 @@ public class AtaqueSteve : MonoBehaviour {
         {
             if (tiempoAtaque <= 0)
             {
-                if (Input.GetKeyDown(KeyCode.B))
+                if (Input.GetKeyDown(KeyCode.L))
                 {
-
+                    SonidoScript.ejecutarSonido("golpeSteve");
                     animator.SetBool("isAttack", true);
                     Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemigos);
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
                         if(enemiesToDamage[i].tag != "bossHand")
                         {
+                            SonidoScript.ejecutarSonido("dañoEnemigo");
                             enemiesToDamage[i].GetComponent<Enemy>().vida -= daño;
                         }
                     }

@@ -61,4 +61,9 @@ public class Health : MonoBehaviour {
         animator.Play("Muerte");
         Destroy(gameObject, timeToDeath);
     }
+
+    void muerte()
+    {
+        SonidoScript.ejecutarSonido("muerteSteve");
+    }
 }

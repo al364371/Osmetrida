@@ -62,6 +62,8 @@ public class RanjedEnemy : MonoBehaviour
 
             if (timeBtwShoots <= 0)
             {
+                SonidoScript.ejecutarSonido("disparoRanged");
+
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 timeBtwShoots = startTimeBtwShoots;
             }

@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  explosion: {fileID: 1338553359749448, guid: 7c18b280f9be8704db03892f0c19476a, type: 2}
+  particles: {fileID: 4729061727306074, guid: 5487196f133a24e40a1109c8567c2a07, type: 2}
 --- !u!212 &212853750158371540
 SpriteRenderer:
   m_ObjectHideFlags: 1

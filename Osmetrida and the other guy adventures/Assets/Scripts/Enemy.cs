@@ -25,4 +25,9 @@ public class Enemy : MonoBehaviour {
         }
 
     }
+
+    void muerte()
+    {
+        SonidoScript.ejecutarSonido("muerteEnemigo");
+    }
 }
