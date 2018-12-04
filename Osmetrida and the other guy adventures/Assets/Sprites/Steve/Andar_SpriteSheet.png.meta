@@ -110,18 +110,18 @@ TextureImporter:
       name: Andar_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 429
-        y: 2193
-        width: 936
-        height: 1505
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d9a00f4a4eb6ae468338fcb7c6d140f
+      spriteID: 85212d1b9737f8f4790f1f2fa39bec95
       vertices: []
       indices: 
       edges: []
@@ -130,18 +130,18 @@ TextureImporter:
       name: Andar_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 2471
-        y: 2048
-        width: 825
-        height: 1595
-      alignment: 9
-      pivot: {x: 0.5636864, y: 0.52882373}
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a42dbe86e94d394d886cb0de9abc52e
+      spriteID: 3271e64b18b12bc49a82024c52539a4d
       vertices: []
       indices: 
       edges: []
@@ -150,18 +150,18 @@ TextureImporter:
       name: Andar_SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 4618
-        y: 2270
-        width: 1076
-        height: 1467
-      alignment: 9
-      pivot: {x: 0.26805687, y: 0.49328473}
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ddc8a56bbe05a4c8905d8561b2c7b8
+      spriteID: 1efe1c6b921bca64483816a631b3b867
       vertices: []
       indices: 
       edges: []
@@ -170,18 +170,18 @@ TextureImporter:
       name: Andar_SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 6528
-        y: 2274
-        width: 1339
-        height: 1518
-      alignment: 9
-      pivot: {x: 0.2531937, y: 0.4776714}
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f5f3c86d7372a64980c47c8d731d41d
+      spriteID: 2420baa06fa3c2448ae444a64a525e0e
       vertices: []
       indices: 
       edges: []
@@ -190,18 +190,18 @@ TextureImporter:
       name: Andar_SpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 463
-        y: 271
-        width: 1472
-        height: 1433
-      alignment: 9
-      pivot: {x: 0.28360644, y: 0.48166752}
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98bec5cf792da7f43bc4b26180207cac
+      spriteID: 007cc8ce0e9ddbf4dbfcde93d371cb23
       vertices: []
       indices: 
       edges: []
@@ -210,18 +210,18 @@ TextureImporter:
       name: Andar_SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 2462
-        y: 271
-        width: 1344
-        height: 1386
-      alignment: 9
-      pivot: {x: 0.34851384, y: 0.46209154}
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcb86c1a45fbf7147af7d25c92acedfa
+      spriteID: 61d3d2252429ad149b31b5fb5fda0624
       vertices: []
       indices: 
       edges: []
@@ -230,18 +230,18 @@ TextureImporter:
       name: Andar_SpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 4644
-        y: 267
-        width: 1284
-        height: 1467
-      alignment: 9
-      pivot: {x: 0.21867546, y: 0.50447696}
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ffd7a1046977f94386fcaef577ed106
+      spriteID: c3dfdfe9d57cb8744afce7dac4503698
       vertices: []
       indices: 
       edges: []
@@ -250,18 +250,18 @@ TextureImporter:
       name: Andar_SpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 6626
-        y: 152
-        width: 748
-        height: 1624
+        x: 6000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6efce1b9dee5a0042b06f04d8597f23a
+      spriteID: 1ce0426399774b843bb93a020b14d56e
       vertices: []
       indices: 
       edges: []

@@ -10,6 +10,7 @@ TagManager:
   - bossHand
   - SceneManager
   - ChamberManager
+  - pause
   layers:
   - Default
   - TransparentFX

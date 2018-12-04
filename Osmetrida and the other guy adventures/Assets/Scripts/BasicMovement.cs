@@ -40,12 +40,6 @@ public class BasicMovement : MonoBehaviour {
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-	if (Input.GetKeyDown(KeyCode.Return)){
-
-		SceneManager.LoadScene("BossFight1");	
-
-	}
-
         if (isGrounded)
         {
             animator.SetBool("isFly", false);

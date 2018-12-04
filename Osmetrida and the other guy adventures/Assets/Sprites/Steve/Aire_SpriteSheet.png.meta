@@ -102,18 +102,18 @@ TextureImporter:
       name: Aire_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 508
-        y: 174
-        width: 948
-        height: 1194
-      alignment: 9
-      pivot: {x: 0.37486112, y: 0.5354843}
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f8620898f357a84ea0ae73ff8c8cc1b
+      spriteID: bf91edda7b9c3844a8e6684a7fb30fb0
       vertices: []
       indices: 
       edges: []
@@ -122,18 +122,18 @@ TextureImporter:
       name: Aire_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 2502
-        y: 175
-        width: 949
-        height: 1202
-      alignment: 9
-      pivot: {x: 0.3872685, y: 0.53263444}
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4108e00517546fe4e9780078a8ab545f
+      spriteID: 73a99fa5197a34b4ea6cc3db0645102f
       vertices: []
       indices: 
       edges: []
