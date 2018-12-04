@@ -6,8 +6,7 @@ using UnityEngine;
 public class Controlador : MonoBehaviour {
 
     public void CambiarEscena(string SampleScene){
-        print("Cambiando a la escena" + SampleScene);
-        SceneManager.LoadScene(SampleScene);
+        StartCoroutine(GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SceneTransition>().SceneLoad());
         }
    /* public void CambiarAContinuar(string PartidaContinuada)
     {

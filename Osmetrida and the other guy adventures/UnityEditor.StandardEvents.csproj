@@ -346,8 +346,6 @@
     <None Include="Assets\Anima2D\Licenses.txt" />
     <None Include="Assets\Anima2D\Readme.txt" />
     <None Include="Assets\Anima2D\Version.txt" />
-    <None Include="Assets\Tilemap\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />
-    <None Include="Assets\Tilemap\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
     <None Include="Packages\com.unity.cinemachine\Editor\Resources\CMWaveform.compute" />
     <None Include="Packages\com.unity.cinemachine\Editor\Resources\CMWaveform.shader" />
     <None Include="Packages\com.unity.cinemachine\Editor\Resources\StdLib.hlsl" />

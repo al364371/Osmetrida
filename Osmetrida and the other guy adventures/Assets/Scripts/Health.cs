@@ -26,7 +26,6 @@ public class Health : MonoBehaviour {
         if(health <= 0)
         {
             Muerte();
-            GoToGameOver();
         }
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -61,15 +60,11 @@ public class Health : MonoBehaviour {
     void Muerte()
     {
         animator.Play("Muerte");
-        Destroy(gameObject, timeToDeath);
+        StartCoroutine(GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SceneTransition>().SceneLoad());
     }
 
     void muerte()
     {
         SonidoScript.ejecutarSonido("muerteSteve");
-    }
-
-    void GoToGameOver() {
-        SceneManager.LoadScene("Game Over"); 
     }
 }
