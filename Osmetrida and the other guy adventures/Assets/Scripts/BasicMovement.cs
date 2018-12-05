@@ -42,12 +42,10 @@ public class BasicMovement : MonoBehaviour {
 
         if (isGrounded)
         {
-            animator.SetBool("isFly", false);
             isWalking();
         }
         else
         {
-            animator.SetBool("isFly", true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)

@@ -17,9 +17,14 @@ public class pause : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown("return"))
         {
-            active = !active;
-            canvas.enabled = active;
-            Time.timeScale = (active) ? 0 : 1f;
+            ToggleGameActive(!active);
         }
 	}
+
+    public void ToggleGameActive(bool toSetActive)
+    {
+        active = toSetActive;
+        canvas.enabled = active;
+        Time.timeScale = (active) ? 0 : 1f;
+    }
 }

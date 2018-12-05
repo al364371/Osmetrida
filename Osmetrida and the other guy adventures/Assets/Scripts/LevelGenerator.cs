@@ -14,6 +14,10 @@ public class LevelGenerator : MonoBehaviour
     public int chamberSizeY;
     public int MapLength;
 
+    public Chamber initialChamber;
+    public Chamber finalChamber;
+    public Vector2 portalOffset;
+
     public int seed = -1;
 
     private int[,] theMapMatrix;
@@ -25,6 +29,9 @@ public class LevelGenerator : MonoBehaviour
 
     private Chamber[][] chamberPool = new Chamber[15][];
 
+    private int EndX;
+    private int EndY;
+    private Vector2 lastFinalInserted;
     private MapManager mapSpawner;
 
     void Start()
@@ -44,48 +51,8 @@ public class LevelGenerator : MonoBehaviour
         GenerateMapMatrix(ref theMapMatrix, ref theSectionMatrix);
         chamberMatrix = ChamberGetter(ref theMapMatrix, ref chamberPool);
         ConnectChambers(new Vector2 (mapSizeX/2, mapSizeY/2),ref chamberMatrix);
-        mapSpawner.Initialize(ref theMapMatrix, ref chamberMatrix, new Vector2((mapSizeX * chamberSizeX) - (chamberSizeX/2), (mapSizeY * chamberSizeY) - (chamberSizeY/2)), sections);
+        mapSpawner.Initialize(ref theMapMatrix, ref chamberMatrix, new Vector2((mapSizeX * chamberSizeX) - (chamberSizeX/2), (mapSizeY * chamberSizeY) - (chamberSizeY/2)), sections, new Vector2(EndX,EndY), portalOffset);
         mapSpawner.CreateSection(0);
-        string path = @"c:\temp\map.txt";
-        using (StreamWriter sw = File.CreateText(path)) 
-        {
-            for(int i=theMapMatrix.GetLength(1) -1; i>0; i--)
-            {
-                string line = "";
-                for(int j=0; j<theMapMatrix.GetLength(0); j++)
-                {
-                    if(theMapMatrix[j,i] != 0)
-                    {
-                        line += "[ ]";
-                    }
-                    else
-                    {
-                        line += "   ";
-                    }
-                }
-                sw.WriteLine(line);
-            }
-        }
-        path = @"c:\temp\mapSections.txt";
-        using (StreamWriter sw = File.CreateText(path)) 
-        {
-            for(int i=theMapMatrix.GetLength(1) -1; i>0; i--)
-            {
-                string line = "";
-                for(int j=0; j<theSectionMatrix.GetLength(0); j++)
-                {
-                    if(theSectionMatrix[j,i] != -1)
-                    {
-                        line += "[" + theSectionMatrix[j,i] +" ]";
-                    }
-                    else
-                    {
-                        line += "    ";
-                    }
-                }
-                sw.WriteLine(line);
-            }
-        }
     }
 
     private void SetRandomSeed()
@@ -115,14 +82,15 @@ public class LevelGenerator : MonoBehaviour
             positionsCreated++;
         }
         CloseMap( ref mapMatrix, ref sectionMatrix);
+        EndX = (int)lastFinalInserted.x;
+        EndY = (int)lastFinalInserted.y;
     }
 
     private Vector2 GenerateInitialChamber(ref int[,] mapMatrix)
     {
-        int chosenType = Random.Range((int) ChamberConnectionType.Left , (int) ChamberConnectionType.Right + 1);
         int initialX = mapSizeX/2;
         int initialY = mapSizeY/2;
-        mapMatrix[initialX,initialY] = chosenType;
+        mapMatrix[initialX,initialY] = (int) initialChamber.connectionType;
         return new Vector2(initialX, initialY);
     }
 
@@ -249,6 +217,10 @@ public class LevelGenerator : MonoBehaviour
             Vector2 positionToCreate = GetPositionToCreate(positionToTest, ref mapMatrix);
             List<ChamberConnectionType> newChamberPossibilities = availableChamberConnectionTypes(positionToCreate, ref mapMatrix, true);
             ChamberConnectionType chamberType = SetChamber(newChamberPossibilities);
+            if (chamberType == finalChamber.connectionType)
+            { // Se ha insertado una camara del mismo tipo que la camara final\\
+                lastFinalInserted = new Vector2(positionToCreate.x, positionToCreate.y);
+            }
             //Calculos de seccion\\
         //Test if section is complete\\
         if(currentSection.isComplete && (ChamberSectionChecking.IsIntermediate(chamberType) || ChamberSectionChecking.IsExtreme(chamberType) ))
@@ -718,6 +690,8 @@ public class LevelGenerator : MonoBehaviour
     {
         Chamber[,] result = new Chamber[mapSizeX,mapSizeY];
         theChamberPool = LoadChambers();
+        int initialX = mapSizeX/2;
+        int initialY = mapSizeY/2;
         for(int i=0; i<result.GetLength(0) ; i++)
         {
             for(int j=0; j<result.GetLength(1); j++)
@@ -728,6 +702,18 @@ public class LevelGenerator : MonoBehaviour
                     Chamber toPut = new Chamber();
                     EqualizeChambers(toPut, chosenChamber);
                     result[i,j] = toPut;
+                }
+                if(i == initialX && j == initialY)
+                {
+                    Chamber initialChamberToInsert = new Chamber();
+                    EqualizeChambers(initialChamberToInsert, initialChamber);
+                    result[i,j] = initialChamberToInsert;
+                }
+                else if(i== EndX && j == EndY)
+                {
+                    Chamber finalChamberToInsert = new Chamber();
+                    EqualizeChambers(finalChamberToInsert,finalChamber);
+                    result[i,j] = finalChamberToInsert;
                 }
             }
         }

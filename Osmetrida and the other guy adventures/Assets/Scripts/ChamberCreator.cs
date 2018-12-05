@@ -24,7 +24,7 @@ public class ChamberCreator : MonoBehaviour
         GenerateConnectionBools(generatedChamber);
         GenerateConnectionInts(generatedChamber);
         GenerateMatrix(generatedChamber);
-        GenerateAsset(generatedChamber);
+//        GenerateAsset(generatedChamber);
     }
     public void GenerateConnectionBools(Chamber target)
     {
@@ -60,16 +60,16 @@ public class ChamberCreator : MonoBehaviour
 
 
 
-
+/* 
     [MenuItem("Asset/Create/Chamber")]
     public void GenerateAsset(Chamber target)
     {
         string path = "Assets/Resources/Chambers/"+ connectionType+ "/"+ chamberType;
         System.IO.Directory.CreateDirectory(path);
         AssetDatabase.CreateAsset(target, path + "/" + chamberName + ".asset");
-    }
+    }*/
 }
-
+/* 
 [CustomEditor(typeof(ChamberCreator))]
 public class ChamberCreatorEditor : Editor
 {
@@ -85,7 +85,7 @@ public class ChamberCreatorEditor : Editor
         }
     }
 }
-
+*/
 public enum ChamberConnectionType
 {
     Top = 1,

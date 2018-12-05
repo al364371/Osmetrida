@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ControladorPausa : MonoBehaviour {
 
+    public GameObject pauseMenu;
+
 	public void CambiarEscena(string LevelGeneratorScene)
     {
         print("Cambiando a la escena" + LevelGeneratorScene);
+        GameObject.FindGameObjectWithTag("pause").GetComponent<pause>().active = true;
+        Time.timeScale = (GameObject.FindGameObjectWithTag("pause").GetComponent<pause>().active) ? 1f : 0;
         SceneManager.LoadScene(LevelGeneratorScene);
     }
 

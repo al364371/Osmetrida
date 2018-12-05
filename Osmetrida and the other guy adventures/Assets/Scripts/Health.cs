@@ -11,7 +11,10 @@ public class Health : MonoBehaviour {
 
     Animator animator;
     public float timeToDeath = 0.25f;
-
+    public float invincibilityTime = 0.5f;
+    private float timeInvincible = 0f;
+    public SpriteRenderer image;
+    private bool invincible;
     public Image[] hearts;
     public Sprite fullHearts;
     public Sprite mediumHearts;
@@ -46,14 +49,29 @@ public class Health : MonoBehaviour {
                 hearts[i].enabled = false;
             }
         }
+        if(invincible)
+        {
+            image.enabled = !image.enabled;
+            timeInvincible += Time.deltaTime;
+            if(timeInvincible >= invincibilityTime)
+            {
+                timeInvincible = 0;
+                invincible = false;
+                image.enabled = true;
+            }
+        }
 	}
 
     public void HurtPlayer(int damage)
     {
-        health -= damage;
-        if (health < 0)
+        if(!invincible)
         {
-            health = 0;
+            health -= damage;
+            if (health < 0)
+            {
+                health = 0;
+            }
+            invincible = true;
         }
     }
 

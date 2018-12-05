@@ -18,10 +18,14 @@ public class MapManager : MonoBehaviour {
 	public int chamberSizeY;
 
 	public GameObject vortexPrefab;
+	public GameObject portalPrefab;
 	public GameObject player;
 	public GameObject enemySpawner;
 	private Tilemap tileMatrix;
 	private int currentSection;
+	private Vector2 endChamber;
+	private Vector2 bossPortalOffset;
+
 
 	// Use this for initialization
 	void Start () 
@@ -35,13 +39,15 @@ public class MapManager : MonoBehaviour {
 	{
 		
 	}
-	public void Initialize(ref int[,] theMatrix, ref Chamber[,] theChamberMatrix, Vector2 origin, List<Section> thesections)
+	public void Initialize(ref int[,] theMatrix, ref Chamber[,] theChamberMatrix, Vector2 origin, List<Section> thesections, Vector2 endPosition, Vector2 PortalOffset)
 	{
 		mapMatrix = theMatrix;
 		chamberMatrix = theChamberMatrix;
 		originX = (int)origin.x;
 		originY = (int)origin.y;
 		sections = thesections;
+		endChamber = endPosition;
+		bossPortalOffset = PortalOffset;
 	}
 	public void CreateSection(int section)
 	{
@@ -171,6 +177,11 @@ public class MapManager : MonoBehaviour {
 				}
             }
         }
+		if(toSpawn == endChamber)
+		{
+			GameObject toInstantiate = Instantiate(portalPrefab, new Vector3(toBeConnected.Origin.x + bossPortalOffset.x, toBeConnected.Origin.y + bossPortalOffset.y, 0), Quaternion.identity);
+			toInstantiate.transform.parent = gameObject.transform;
+		}
 	}
 
 	public void PrepareChambers(Vector2 maxes, Vector2 mins, Section section)

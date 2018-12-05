@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTiempoAtaque: 0.3
   attackPos: {fileID: 4763504500633462}
-  attackRange: 7.39
+  attackRange: 15
   enemigos:
     serializedVersion: 2
     m_Bits: 512
@@ -208,6 +208,8 @@ MonoBehaviour:
   health: 4
   numHearts: 8
   timeToDeath: 0.5
+  invincibilityTime: 0.5
+  image: {fileID: 0}
   hearts:
   - {fileID: 0}
   - {fileID: 0}

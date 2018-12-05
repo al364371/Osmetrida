@@ -26,6 +26,13 @@ public class LevelConnector : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D collider)
 	{
+		StartCoroutine(LoadLevelCoroutine());
+	}
+
+	public IEnumerator LoadLevelCoroutine()
+	{
+		PanelEvents.TriggerFade();
+		yield return new WaitForSeconds(0.3f);
 		MapManagerEvents.DrawSection(newSection);
 	}
 }
